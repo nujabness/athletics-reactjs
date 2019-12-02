@@ -1,6 +1,10 @@
 import {Schema, model} from 'mongoose';
 
 const userSchema = new Schema({
+    email: {
+        type: String,
+        required: true
+    },
     username: {
         type: String,
         required: true
@@ -11,6 +15,23 @@ const userSchema = new Schema({
     },
     role: {
         type: String,
+        required: true
+    },
+    nom_athlete: {
+        type: String,
+        required: true
+    },
+    prenom_athlete: {
+        type: String,
+        required: true
+    },
+    sexe_athlete: {
+        type: String,
+        required: true
+    },
+    nationalite_athlete: {
+        type: Schema.Types.ObjectId,
+        ref: 'Nationalite',
         required: true
     }
 });

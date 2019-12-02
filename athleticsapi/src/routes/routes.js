@@ -1,8 +1,6 @@
 import {Router} from 'express';
+import UserController from '../controller/UserController';
 import NationaliteController from '../controller/NationaliteController';
-import AthleteController from '../controller/AthleteController';
-import EtatController from '../controller/EtatController';
-import ParticipationController from '../controller/ParticipationController';
 import MedailleController from '../controller/MedailleController';
 import EpreuveController from '../controller/EpreuveController';
 
@@ -12,19 +10,21 @@ router.get('/hello', (request, response) => {
     response.send('hello');
 });
 
-router.get('/athlete', AthleteController.list);
-router.post('/athlete', AthleteController.create);
-router.get('/athlete/:id', AthleteController.details);
-router.delete('/athlete/:id', AthleteController.delete);
-router.put('/athlete/:id', AthleteController.update);
+router.get('/user', UserController.list);
+router.post('/login', UserController.login);
+
+// router.post('/athlete', AthleteController.create);
+// router.get('/athlete/:id', AthleteController.details);
+// router.delete('/athlete/:id', AthleteController.delete);
+// router.put('/athlete/:id', AthleteController.update);
+
+router.post('/participation', EpreuveController.getParticipation)
+router.post('/participer', EpreuveController.participer)
+router.post('/annuler/participation', EpreuveController.annulerParticiper)
 
 router.get('/nationalite', NationaliteController.list)
 
 router.get('/epreuve', EpreuveController.list)
-
-router.get('/etat', EtatController.list)
-
-router.get('/participation', ParticipationController.list)
 
 router.get('/medaille', MedailleController.list)
 

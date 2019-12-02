@@ -11,13 +11,25 @@ const epreuveSchema = new Schema({
     },
     date_epreuve: {
         type: String,
+        default: Date.now(),
         required: true
     },
-    etat_epreuve: {
-        type: Schema.Types.ObjectId,
-        ref: 'Etat',
+    phase_epreuve: {
+        type: String,
         required: true
-    }
+    },
+    participants: [{
+        athlete:{
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+        },
+        medaille: {
+            type: String
+        },
+        resultat: {
+            type: String
+        },
+    }]
 });
 
 const Epreuve = model('Epreuve', epreuveSchema)

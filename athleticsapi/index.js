@@ -13,12 +13,12 @@ app.use(cors({origin: true}));
 app.use('/', router)
 
 
-const port = 3000;
+const port = 8090;
 
 database().then(async () => {
     console.log('connect')
     app.listen(port, () => {
-        console.log('Server lance sur port 3000')
+        console.log('Server lance sur port 8090')
     })
 });
 

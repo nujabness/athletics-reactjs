@@ -1,5 +1,5 @@
-const baseUrl = "https://jsonplaceholder.typicode.com";
-class PostService {
+const baseUrl = 'http://localhost:8090';
+class EventService {
 
     static async list(){
         let init = {
@@ -8,7 +8,7 @@ class PostService {
                 "Content-Type": "application/json"
             }
         }
-        let call = await fetch(`${baseUrl}/posts`, init);
+        let call = await fetch(`${baseUrl}/epreuve`, init);
         return call;
     }
 
@@ -57,8 +57,6 @@ class PostService {
         let call = await fetch(`${baseUrl}/posts/${id}`, init);
         return call;
     }
-
-
 }
 
-export default PostService;
+export default EventService;

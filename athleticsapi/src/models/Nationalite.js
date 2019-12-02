@@ -5,7 +5,7 @@ const nationaliteSchema = new Schema({
         type: String,
         required: true
     },
-    cigle_nationalite: {
+    link_nationalite: {
         type: String,
         required: true
     }

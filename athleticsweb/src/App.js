@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
-import './App.css';
 import {BrowserRouter, Route} from 'react-router-dom';
-import Home from './pages/Home'
-import DetailsPost from './components/DetailsPost';
+import './App.sass';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Login from './pages/Login'
+import Nav from './components/Nav';
+import Events from './pages/Events';
+import Participations from './pages/Participations';
+import SettingProfile from './pages/SettingProfile';
 
 class App extends Component {
 
@@ -14,42 +19,30 @@ class App extends Component {
   render() {
     return (
         <BrowserRouter>
-          <Route path="/" exact component={Home}/>
-          <Route path="/post/:id" exact component={DetailsPost}/>
+          <Header/>
+            {
+                localStorage.getItem('login') ?
+                <section className="section">
+                    <div className="container">
+                        <div className="columns">
+                            <div className="column is-one-quarter">
+                                <Nav/>
+                            </div>
+                            <div className="column">
+                              <div className="columns is-centered">
+                                <Route path="/profile" exact component={SettingProfile}/>
+                                <Route path="/events" exact component={Events}/>
+                                <Route path="/participations" exact component={Participations}/>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> : <Route path="/" exact component={Login}/>
+            }
+            <Footer/>
         </BrowserRouter>
     )
   }
 
 }
-
-
-
-
-
-
-// import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-//
-// function App() {
-//   return (
-//     <div className="App">à
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
 export default App;
