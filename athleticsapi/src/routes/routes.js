@@ -28,6 +28,4 @@ router.get('/epreuve', EpreuveController.list)
 
 router.get('/medaille', MedailleController.list)
 
-
-
 export default router;

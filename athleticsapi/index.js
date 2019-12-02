@@ -12,7 +12,6 @@ app.use(cors({origin: true}));
 
 app.use('/', router)
 
-
 const port = 8090;
 
 database().then(async () => {
