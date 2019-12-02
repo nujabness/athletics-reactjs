@@ -7,8 +7,7 @@ class Event extends Component {
         super(props);
         this.state = {
             message: '',
-            participeDeja: false,
-            user: {}
+            participeDeja: false
         }
     }
 
@@ -16,17 +15,15 @@ class Event extends Component {
         let user = JSON.parse(localStorage.getItem('user'));
         this.props.data.participants.forEach((participant) => {
             if (participant.athlete._id == user._id){
-                this.setState({
-                    participeDeja: true,
-                    user: user
-                })
+                this.setState({participeDeja: true})
             }
         });
     }
 
     async participer() {
+        let user = JSON.parse(localStorage.getItem('user'));
         let body = {
-            user: this.state.user,
+            user: user,
             epreuve: this.props.data
         }
         let response = await ParticipationService.participer(body);
@@ -41,8 +38,9 @@ class Event extends Component {
     }
 
     async annulerParticipation() {
+        let user = JSON.parse(localStorage.getItem('user'));
         let body = {
-            user: this.state.user,
+            user: user,
             epreuve: this.props.data
         }
         let response = await ParticipationService.annulerParticipation(body);
