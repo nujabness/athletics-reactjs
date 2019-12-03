@@ -6,8 +6,23 @@ class UserController {
         let status = 200;
         let body = {};
         try {
-            let posts = await User.find().populate('nationalite_athlete');
-            body = {posts, 'message': 'List User'};
+            let user = await User.find().populate('nationalite_athlete');
+            body = {user, 'message': 'Update User'};
+        } catch (error) {
+            status = 500;
+            body = {'message': error.message};
+        }
+        return response.status(status).json(body);
+    }
+
+
+    static async update(request, response) {
+        let status = 200;
+        let body = {};
+        try {
+            let id = request.body.id;
+            let user = await User.updateOne({id: id}, body);
+            body = {user, 'message': 'Update User'};
         } catch (error) {
             status = 500;
             body = {'message': error.message};

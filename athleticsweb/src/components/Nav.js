@@ -16,7 +16,13 @@ class Nav extends Component{
             <aside >
                 <p className="menu-label">Settings</p>
                 <ul className="menu-list">
-                    <li><Link to={'/profile'}>Profile</Link></li>
+                    <li>
+                        <p>Profile</p>
+                        <ul>
+                            <li><Link to={'/profile'}>Vew Profile</Link></li>
+                            <li><Link to={'/profile/edit'}>Edit Profile</Link></li>
+                        </ul>
+                    </li>
                 </ul>
                 <p className="menu-label">Manage your profile</p>
                 <ul className="menu-list">

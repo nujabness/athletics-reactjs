@@ -50,8 +50,7 @@ class Login extends Component {
 
     render() {
         return (
-            <section className="hero has-background-danger is-fullheight">
-                <div className="hero-body">
+                <div className="hero-body has-background-danger">
                     <div className="container">
                         <div className="columns is-centered">
                             <div className="column is-5-tablet is-4-desktop is-3-widescreen">
@@ -87,7 +86,6 @@ class Login extends Component {
                         </div>
                     </div>
                 </div>
-            </section>
         )
     }
 }

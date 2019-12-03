@@ -12,11 +12,11 @@ router.get('/hello', (request, response) => {
 
 router.get('/user', UserController.list);
 router.post('/login', UserController.login);
+router.put('/user/update', UserController.update);
 
 // router.post('/athlete', AthleteController.create);
 // router.get('/athlete/:id', AthleteController.details);
 // router.delete('/athlete/:id', AthleteController.delete);
-// router.put('/athlete/:id', AthleteController.update);
 
 router.post('/participation', EpreuveController.getParticipation)
 router.post('/participer', EpreuveController.participer)

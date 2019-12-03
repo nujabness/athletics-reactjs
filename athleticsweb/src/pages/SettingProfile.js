@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Profile from '../components/Profile';
+import EditProfile from '../components/EditProfile';
 
 class SettingProfile extends Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class SettingProfile extends Component {
         return (
             <div className="column">
                 <h3>{this.state.title}</h3>
-                <Profile/>
+                <EditProfile/>
             </div>
         )
     }
