@@ -6,6 +6,11 @@ class Nav extends Component{
         super(props);
     }
 
+    logout() {
+        localStorage.clear()
+        window.location.replace('/')
+    }
+
     render(){
         return(
             <aside >
@@ -17,6 +22,7 @@ class Nav extends Component{
                 <ul className="menu-list">
                     <li><Link to={'/events'}>Events</Link></li>
                     <li><Link to={'/participations'}>Participations</Link></li>
+                    <li><button className="button is-danger" onClick={this.logout}>Déconnexion</button></li>
                 </ul>
             </aside>
         )

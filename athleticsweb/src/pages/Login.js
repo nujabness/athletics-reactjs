@@ -9,17 +9,10 @@ class Login extends Component {
             epreuves: [],
             email: '',
             password: '',
-            error: false
+            error: false,
+            messageError: ''
 
         }
-    }
-
-    async componentDidMount() {
-        // let response = await User.find();
-        // if (response.ok) {
-        //     let data = await response.json();
-        //     this.setState({epreuves: data.epreuves});
-        // }
     }
 
     handleChange(e){
@@ -37,7 +30,7 @@ class Login extends Component {
         }
         let response = await UserService.login(body);
         let data = await response.json();
-        if(response.ok &&  data.user !== null) {
+        if(response.ok &&  data.user !== null && data.user !== undefined) {
             this.setState({error: false});
             localStorage.setItem('login', true);
             localStorage.setItem('user', JSON.stringify(data.user));
@@ -45,11 +38,13 @@ class Login extends Component {
             localStorage.setItem('userId', data.user._id);
             localStorage.setItem('userNom', data.user.nom_athlete);
             localStorage.setItem('userPrenom', data.user.prenom_athlete);
-            this.props.history.push('/events');
             window.location.replace('/events')
         } else {
             localStorage.setItem('login', false);
-            this.setState({error: true});
+            this.setState({
+                error: true,
+                messageError: data.message
+            });
         }
     }
 
@@ -81,13 +76,10 @@ class Login extends Component {
                                     </div>
                                     <div className="field">
                                         {
-                                            this.state.error ? <span className="has-text-black">Email ou mot de passe incorrect !</span>: null
+                                            this.state.error ? <span className="has-text-danger">{this.state.messageError}</span>: null
                                         }
                                     </div>
-                                    <div className="field">
-                                        <label htmlFor="" className="checkbox"><input type="checkbox"/>Remember me</label>
-                                    </div>
-                                    <div className="field">
+                                    <div className="field has-text-right">
                                         <button className="button is-info" onClick={(e) => this.login(e)}>Login</button>
                                     </div>
                                 </form>

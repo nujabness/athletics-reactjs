@@ -32,7 +32,7 @@ class Participations extends Component {
             <div className="container">
                 <h2>{this.state.title}</h2>
                 <div className="columns is-centered">
-                    <div className="column is-two-thirds">
+                    <div className="column is-three-fifths">
                         <div className="card">
                             <div className="card-image">
                                 <figure className="image is-128x128">
