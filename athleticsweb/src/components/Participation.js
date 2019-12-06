@@ -1,22 +1,20 @@
 import React , {Component} from 'react';
+import getUser from "../helpers/user";
 
 class Participation extends Component {
 
     constructor(props){
         super(props);
         this.state = {
-            userNom: '',
-            userPrenom: '',
+            user: {},
             medaille: 'PAS DE MEDAILLE',
             resultat: 'ABS'
         }
     }
 
-    componentDidMount() {
-        this.setState({
-            userNom: localStorage.getItem('userNom'),
-            userPrenom: localStorage.getItem('userPrenom')
-        })
+    async componentDidMount() {
+        let user = await getUser();
+        this.setState({user: user})
         if(this.props.data.resultat) {
             this.setState({resultat: this.props.data.resultat})
         }
@@ -28,8 +26,8 @@ class Participation extends Component {
     render() {
         return(
             <tr>
-                <td>{this.state.userNom}</td>
-                <td>{this.state.userPrenom}</td>
+                <td>{this.state.user.nom_athlete}</td>
+                <td>{this.state.user.prenom_athlete}</td>
                 <td>{this.props.data.epreuve.nom_epreuve}</td>
                 <td>{this.props.data.epreuve.phase_epreuve}</td>
                 <td>{this.props.data.epreuve.date_epreuve}</td>

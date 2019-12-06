@@ -7,7 +7,7 @@ class NationaliteController{
         let body = {};
         try {
             let nationalites = await Nationalite.find();
-            body = {nationalites, 'message': 'List Nationalite'};
+            body = {nationalites, 'message': 'Liste des Nationalités'};
         } catch (error) {
             status = 500;
             body = {'message': error.message};

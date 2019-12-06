@@ -24,10 +24,12 @@ const epreuveSchema = new Schema({
             ref: 'User',
         },
         medaille: {
-            type: String
+            type: String,
+            default: 'PAS DE MEDAILLE'
         },
         resultat: {
-            type: String
+            type: String,
+            default: 'ABS'
         },
     }]
 });

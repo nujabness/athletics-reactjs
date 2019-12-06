@@ -1,13 +1,13 @@
-import Medaille from '../models/Medaille';
+import TypeUser from "../models/TypeUser";
 
-class MedailleController{
+class TypeController {
 
     static async list(request, response) {
         let status = 200;
         let body = {};
         try {
-            let posts = await Medaille.find();
-            body = {posts, 'message': 'List Medaille'};
+            let typeusers = await TypeUser.find();
+            body = {typeusers, 'message': 'Liste des TypeUser'};
         } catch (error) {
             status = 500;
             body = {'message': error.message};
@@ -15,4 +15,4 @@ class MedailleController{
         return response.status(status).json(body);
     }
 }
-export default MedailleController;
+export default TypeController;

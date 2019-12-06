@@ -5,34 +5,32 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    username: {
-        type: String,
-        required: true
-    },
     password: {
         type: String,
         required: true
     },
     role: {
-        type: String,
-        required: true
+        type: Schema.Types.ObjectId,
+        ref: 'TypeUser',
+        default: '5de7b79c931403cf90dc97f7'
     },
     nom_athlete: {
         type: String,
-        required: true
+        default: 'default',
     },
     prenom_athlete: {
         type: String,
-        required: true
+        default: 'default',
     },
     sexe_athlete: {
         type: String,
-        required: true
+        default: 'HOMME'
     },
     nationalite_athlete: {
         type: Schema.Types.ObjectId,
         ref: 'Nationalite',
-        required: true
+        default: '5de6aa9ee56c844a2444e797'
+
     }
 });
 

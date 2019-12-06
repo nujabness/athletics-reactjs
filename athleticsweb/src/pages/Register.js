@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import UserService from "../services/UserService";
-import {Link} from 'react-router-dom';
 
 class Login extends Component {
     constructor(props) {
@@ -21,25 +20,22 @@ class Login extends Component {
         })
     }
 
-    async login(e) {
+    async register(e) {
         e.preventDefault();
         let body = {
             email: this.state.email,
             password: this.state.password
         }
-        let response = await UserService.login(body);
+        let response = await UserService.register(body);
         let data = await response.json();
-        if(response.ok &&  data.user !== null && data.user !== undefined) {
-            this.setState({error: false});
-            localStorage.setItem('login', true);
-            localStorage.setItem('userId', data.user._id);
-            window.location.replace('/events')
-        } else {
-            localStorage.setItem('login', false);
+        if(response.ok) {
+            this.props.history.push('/')
+        }else{
             this.setState({
                 error: true,
                 messageError: data.message
             });
+
         }
     }
 
@@ -48,9 +44,9 @@ class Login extends Component {
             <div className="hero-body has-background-danger">
                 <div className="container">
                     <div className="columns is-centered">
-                        <div className="column is-one-third">
-                            <h3 className="title has-text-grey-light">Login</h3>
-                            <form action="" className="box">
+                        <div className="column is-5-tablet is-4-desktop is-3-widescreen">
+                            <h3 className="title has-text-grey-light">Register</h3>
+                            <form  onSubmit={(e) => this.register(e)} className="box">
                                 <div className="field">
                                     <label className="label">Email</label>
                                     <div className="control has-icons-left">
@@ -75,14 +71,7 @@ class Login extends Component {
                                     }
                                 </div>
                                 <div className="field has-text-right">
-                                    <div className="columns">
-                                        <div className="column">
-                                            <Link className="button is-info" to={'/register'}>Register</Link>
-                                        </div>
-                                        <div className="column">
-                                            <button className="button is-success" onClick={(e) => this.login(e)}>Login</button>
-                                        </div>
-                                    </div>
+                                    <button type="submit" className="button is-info">Register</button>
                                 </div>
                             </form>
                         </div>
