@@ -1,0 +1,23 @@
+/* 1 */
+{
+    "_id" : ObjectId("5ddfbcd1d4d3e9d4074cc9f6"),
+    "email" : "julien.maffar@hotmail.com",
+    "password" : "admin",
+    "role" : ObjectId("5de7b77a931403cf90dc97e3"),
+    "nom_athlete" : "MAFFAR",
+    "prenom_athlete" : "Julien",
+    "sexe_athlete" : "HOMME",
+    "nationalite_athlete" : ObjectId("5ddfa221d4d3e9d4074cc3ae")
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("5de0f016d4d3e9d4074cd895"),
+    "email" : "user@gmail.com",
+    "password" : "user",
+    "role" : ObjectId("5de7b79c931403cf90dc97f7"),
+    "nom_athlete" : "EL ASSOURI",
+    "prenom_athlete" : "Mohammed",
+    "sexe_athlete" : "HOMME",
+    "nationalite_athlete" : ObjectId("5ddfa221d4d3e9d4074cc3ae")
+}

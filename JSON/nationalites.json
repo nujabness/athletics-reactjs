@@ -1,0 +1,13 @@
+/* 1 */
+{
+    "_id" : ObjectId("5ddfa221d4d3e9d4074cc3ae"),
+    "nom_nationalite" : "Français",
+    "link_nationalite" : "https://image.flaticon.com/icons/svg/197/197560.svg"
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("5de6aa9ee56c844a2444e797"),
+    "nom_nationalite" : "Allemagne",
+    "link_nationalite" : "https://image.flaticon.com/icons/svg/197/197571.svg"
+}

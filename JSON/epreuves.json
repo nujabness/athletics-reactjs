@@ -1,0 +1,65 @@
+/* 1 */
+{
+    "_id" : ObjectId("5ddfe044d4d3e9d4074cce5b"),
+    "nom_epreuve" : "1000m",
+    "type_epreuve" : "SPRINT",
+    "date_epreuve" : "2019-12-05",
+    "phase_epreuve" : "FINAL",
+    "__v" : 38,
+    "participants" : []
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("5de7cbf7785e752480de9754"),
+    "date_epreuve" : "2019-12-20",
+    "nom_epreuve" : "2000m",
+    "type_epreuve" : "COURSE",
+    "phase_epreuve" : "QUART-FINAL",
+    "participants" : [],
+    "__v" : 11
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("5dea2920148be738fc68a839"),
+    "date_epreuve" : "2019-12-04",
+    "nom_epreuve" : "dfdsf",
+    "type_epreuve" : "DECATHLON",
+    "phase_epreuve" : "QUART-FINAL",
+    "participants" : [],
+    "__v" : 3
+}
+
+/* 4 */
+{
+    "_id" : ObjectId("5dea33cf148be738fc68a83b"),
+    "date_epreuve" : "2019-12-12",
+    "nom_epreuve" : "qsd",
+    "type_epreuve" : "COURSE",
+    "phase_epreuve" : "QUART-FINAL",
+    "participants" : [],
+    "__v" : 3
+}
+
+/* 5 */
+{
+    "_id" : ObjectId("5dea479b8d96d52c48eadc60"),
+    "date_epreuve" : "2019-12-11",
+    "nom_epreuve" : "LOL",
+    "type_epreuve" : "SAUT",
+    "phase_epreuve" : "DEMI-FINAL",
+    "participants" : [],
+    "__v" : 0
+}
+
+/* 6 */
+{
+    "_id" : ObjectId("5dea4b038d96d52c48eadc67"),
+    "date_epreuve" : "2019-12-04",
+    "nom_epreuve" : "dsf",
+    "type_epreuve" : "COURSE",
+    "phase_epreuve" : "DEMI-FINAL",
+    "participants" : [],
+    "__v" : 0
+}

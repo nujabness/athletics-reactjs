@@ -1,0 +1,11 @@
+/* 1 */
+{
+    "_id" : ObjectId("5de7b77a931403cf90dc97e3"),
+    "role" : "ADMIN"
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("5de7b79c931403cf90dc97f7"),
+    "role" : "USER"
+}
