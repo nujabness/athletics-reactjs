@@ -22,7 +22,8 @@ Le projet athleticsweb est une interface react permettant la visualisation des e
 Cette interface offre la possibilité à des athlète de s'inscire et de gérer leur profile par le biais d'un formualire.
 Et permet également à un administrateur de gerer l'ensemble du tournoi.
 
-Les données permettant de manipuler l'application se trouvent dans le dossier JSON.
+**Les données permettant de manipuler l'application se trouvent dans le dossier JSON.**
+**Créer une base MONGODB athletics**
 
 
 ### Difficulté rencontré
@@ -34,6 +35,8 @@ Je ne sais toujours pas pourquoi on doit passer par this.setState().
 Par moments, la mise a jour ne s'effectuait pas.
 J'ai eu ce problème a multiple reprise et c'est pour cela que dans le composant Nav
 J'accède directement au state dans la méthode focusLink.
+
+Je ne maîtrise pas encore les BDD NoSql qui sont totalements differentes des bases SQL que j'ai l'habitude de manipuler.
 
 ### Manque
 
